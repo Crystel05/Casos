@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.Controller">
+   <children>
+      <Pane fx:id="contEsferas" layoutX="29.0" layoutY="88.0" prefHeight="585.0" prefWidth="731.0" style="-fx-border-color: BLUE;" />
+      <Text layoutX="334.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lanzar esferas-Patrones de diseño">
+         <font>
+            <Font name="Elephant" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="850.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione las características">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="809.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantida de esferas" wrappingWidth="184.63916015625">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="809.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="806.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="807.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velocidad">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="812.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="iniciarCreacion" layoutX="844.0" layoutY="433.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="31.0" prefWidth="115.0" text="Iniciar" />
+      <Button fx:id="iniciarNuevaCreacion" layoutX="998.0" layoutY="433.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="115.0" text="Iniciar nuevo" />
+      <Text layoutX="883.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo transurrido">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text id="patron1" fx:id="patron1" layoutX="900.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text id="patron2" fx:id="patron2" layoutX="900.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón" wrappingWidth="57.984375">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text id="patron4" fx:id="patron4" layoutX="900.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <Text id="patron3" fx:id="patron3" layoutX="900.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="cantEsferas" layoutX="1038.0" layoutY="149.0" prefHeight="31.0" prefWidth="94.0" />
+      <ComboBox fx:id="colorEsferas" layoutX="990.0" layoutY="211.0" prefHeight="31.0" prefWidth="142.0" promptText="Colores" />
+      <ComboBox fx:id="velocidadEsferas" layoutX="990.0" layoutY="316.0" prefHeight="31.0" prefWidth="142.0" promptText="Velocidades" />
+      <ComboBox fx:id="patronEsferas" layoutX="990.0" layoutY="365.0" prefHeight="31.0" prefWidth="142.0" promptText="Patrones" />
+      <ComboBox fx:id="direccionEsferas" layoutX="990.0" layoutY="262.0" prefHeight="31.0" prefWidth="142.0" promptText="Direcciones" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron1" layoutX="1036.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron2" layoutX="1036.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron3" layoutX="1036.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron4" layoutX="1036.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</Pane>
