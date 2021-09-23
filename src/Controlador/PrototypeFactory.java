@@ -12,7 +12,7 @@ public class PrototypeFactory implements IFactory {
 
     @Override
     public IPrototype crear(Colores color) { // equivalente al getPrototype
-        return prototipos.get(color.toString()).clone();
+        return (IPrototype) prototipos.get(color.toString()).clone();
     }
     public static void addPrototype(String prototypeName, IPrototype prototype){
         prototipos.put(prototypeName, prototype);
