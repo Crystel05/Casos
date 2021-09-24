@@ -1,12 +1,13 @@
-package MODEL;
+package Controlador;
 
-public class TesterMain {
+import MODEL.*;
 
-    public static void main(String[] args){
+public class Inicializador {
 
-//        ComboManager comboManager = new ComboManager();
-//        ComidaManager comidaManager = new ComidaManager();
+    public Inicializador() {
+    }
 
+    public static void inicializar(){
         Comida comida = new Comida("papas", 500, "pap", TipoComida.Adicional);
         ComidaManager.addItem("papas",comida);
         comida = new Comida("ensalada", 500, "ens", TipoComida.Adicional);
@@ -35,11 +36,5 @@ public class TesterMain {
         combo = new Combo.Builder().setPlatoFuerte("pizza").addBebidas("gaseosa").build();
         ComboManager.addItem("Combo 4", combo);
         combo = new Combo.Builder().setPlatoFuerte("pizza").addBebidas("gaseosa").addAdicionales("ensalada").addAdicionales("tres leches").build();
-        ComboManager.addItem("Combo 5", combo);
-
-        ComboManager.getAllKeys();
-        ComidaManager.getTypeKeys(TipoComida.Adicional);
-
-
     }
 }
