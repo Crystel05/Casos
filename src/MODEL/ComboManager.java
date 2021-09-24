@@ -37,7 +37,6 @@ public class ComboManager {
 
         for(String llave : llaves) {
             keys.add(llave);
-            System.out.println(llave);
         }
         return keys;
     }

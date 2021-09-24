@@ -39,7 +39,6 @@ public class ComidaManager {
         for(String llave : llaves) {
             if(((Comida)comidas.get(llave)).getTipoComida() == tipo) {
                 keys.add(llave);
-                System.out.println(llave);
             }
         }
         return keys;

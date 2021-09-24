@@ -39,31 +39,33 @@ public class Combo implements IPrototype {
     }
 
     public String getFormatedAdicionales() {
-        String add = "";
+        StringBuilder add = new StringBuilder();
         for(IPrototype comida : adicionales){
-            add += ((Comida) comida).getNombre() + "*";
+            String precio = String.valueOf(((Comida) comida).getPrecio());
+            add.append(((Comida) comida).getNombre()).append("\t\t\t\t₡ ").append(precio).append("-");
         }
-        return add;
+        return add.toString();
     }
 
     public String getFormatedBebida() {
-        String add = "";
+        StringBuilder add = new StringBuilder();
         for(IPrototype comida : bebidas){
-            add += ((Comida) comida).getNombre() + "*";
+            String precio = String.valueOf(((Comida) comida).getPrecio());
+            add.append(((Comida) comida).getNombre()).append("\t\t\t\t₡ ").append(precio).append("-");
         }
-        return add;
+        return add.toString();
     }
 
-    public void setAdicionales(ArrayList<IPrototype> adicionales) {
-        this.adicionales = adicionales;
+    public void addAdicional(IPrototype adicional) {
+        this.adicionales.add(adicional);
     }
 
     public ArrayList<IPrototype> getBebidas() {
         return bebidas;
     }
 
-    public void setBebidas(ArrayList<IPrototype> bebidas) {
-        this.bebidas = bebidas;
+    public void addBebida(IPrototype bebida) {
+        this.bebidas.add(bebida);
     }
 
     public float getPrice(){

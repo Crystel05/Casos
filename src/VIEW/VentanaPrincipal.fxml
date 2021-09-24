@@ -63,22 +63,22 @@
             <Font name="Footlight MT Light" size="25.0" />
          </font>
       </Text>
-      <ImageView fitHeight="95.0" fitWidth="89.0" layoutX="263.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true" rotate="18.4">
+      <ImageView fitHeight="95.0" fitWidth="89.0" layoutX="263.0" layoutY="104.0" onMouseClicked="#agregarPlatoFuertes" pickOnBounds="true" preserveRatio="true" rotate="18.4">
          <image>
             <Image url="@Imagenes/hambuerguesa.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="73.0" fitWidth="40.0" layoutX="287.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" rotate="-11.3">
+      <ImageView fitHeight="73.0" fitWidth="40.0" layoutX="287.0" layoutY="200.0" onMouseClicked="#agregarBebidas" pickOnBounds="true" preserveRatio="true" rotate="-11.3">
          <image>
             <Image url="@Imagenes/coca.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="129.0" layoutX="242.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true" rotate="-11.3">
+      <ImageView fitHeight="72.0" fitWidth="129.0" layoutX="242.0" layoutY="316.0" onMouseClicked="#agregarAdicionales" pickOnBounds="true" preserveRatio="true" rotate="-11.3">
          <image>
             <Image url="@Imagenes/papas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="249.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" rotate="18.4">
+      <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="249.0" layoutY="415.0" onMouseClicked="#agregarCombo" pickOnBounds="true" preserveRatio="true" rotate="18.4">
          <image>
             <Image url="@Imagenes/combo.png" />
          </image>
