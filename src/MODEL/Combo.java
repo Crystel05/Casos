@@ -80,8 +80,8 @@ public class Combo implements IPrototype {
     public static class Builder implements IBuilder<Combo>{
         private String nombre;
         private IPrototype platoFuerte;
-        private ArrayList<IPrototype> adicionales;
-        private ArrayList<IPrototype> bebidas;
+        private ArrayList<IPrototype> adicionales = new ArrayList<>();
+        private ArrayList<IPrototype> bebidas = new ArrayList<>();
 
         public IBuilder setNombre(String nombre){
             this.nombre = nombre;
@@ -89,17 +89,18 @@ public class Combo implements IPrototype {
         }
 
         public Builder setPlatoFuerte(String nombre){
-            this.platoFuerte = ComidaManager.getItem(nombre).clone();
+            this.platoFuerte = ComidaManager.getItem(nombre);
             return this;
         }
 
         public Builder addAdicionales(String nombre){
-            this.adicionales.add( this.platoFuerte = ComidaManager.getItem(nombre));
+            IPrototype item = ComidaManager.getItem(nombre);
+            this.adicionales.add(item);
             return this;
         }
 
         public Builder addBebidas(String nombre){
-            this.bebidas.add( this.platoFuerte = ComidaManager.getItem(nombre));
+            this.bebidas.add(ComidaManager.getItem(nombre));
             return this;
         }
 

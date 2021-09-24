@@ -10,9 +10,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="619.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Factura">
+      <Text layoutX="624.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Factura">
          <font>
-            <Font name="Footlight MT Light" size="37.0" />
+            <Font name="Maiandra GD" size="32.0" />
          </font>
       </Text>
       <TextArea fx:id="factura" editable="false" layoutX="451.0" layoutY="67.0" prefHeight="476.0" prefWidth="448.0" style="-fx-border-color: BLUE;">
@@ -89,6 +89,6 @@
             <Font name="Kristen ITC" size="15.0" />
          </font>
       </Text>
-      <Line endX="100.0" layoutX="553.0" layoutY="316.0" rotate="90.0" startX="-400.0" stroke="#2a6dab" strokeWidth="3.0" />
+      <Line endX="100.0" layoutX="554.0" layoutY="303.0" rotate="90.0" startX="-400.0" stroke="#2a6dab" strokeWidth="3.0" />
    </children>
 </Pane>

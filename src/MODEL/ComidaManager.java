@@ -9,7 +9,7 @@ public class ComidaManager {
     public ComidaManager(){}
 
 
-    public static HashMap<String, IPrototype> comidas;
+    public static HashMap<String, IPrototype> comidas = new HashMap<String, IPrototype>();;
 
 
     public static IPrototype getItem(String nombreCombo) {

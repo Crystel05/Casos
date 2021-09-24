@@ -9,17 +9,17 @@ public class ComboManager {
 
     public ComboManager(){}
 
-    public HashMap<String, IPrototype> combos;
+    public static HashMap<String, IPrototype> combos = new HashMap<String, IPrototype>();
 
-    public IPrototype getItem(String nombreCombo){
+    public static IPrototype getItem(String nombreCombo){
         return combos.get(nombreCombo).clone();
     }
 
-    public void addItem(String nombre, IPrototype combo){
+    public static void addItem(String nombre, IPrototype combo){
         combos.put(nombre, combo);
     }
 
-    public ArrayList<IPrototype>getAll(){
+    public static ArrayList<IPrototype>getAll(){
         ArrayList<IPrototype> listaCombos = new ArrayList<IPrototype>();
 
         Set<String> llaves = combos.keySet();
@@ -30,13 +30,14 @@ public class ComboManager {
         return listaCombos;
     }
 
-    public ArrayList<String>getAllKeys(){
+    public static ArrayList<String>getAllKeys(){
         ArrayList<String> keys = new ArrayList<String>();
 
         Set<String> llaves = combos.keySet();
 
         for(String llave : llaves) {
             keys.add(llave);
+            System.out.println(llave);
         }
         return keys;
     }

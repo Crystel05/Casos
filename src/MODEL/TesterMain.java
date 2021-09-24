@@ -4,39 +4,40 @@ public class TesterMain {
 
     public static void main(String[] args){
 
-        ComboManager comboManager = new ComboManager();
-        ComidaManager comidaManager = new ComidaManager();
+//        ComboManager comboManager = new ComboManager();
+//        ComidaManager comidaManager = new ComidaManager();
 
         Comida comida = new Comida("papas", 500, "pap", TipoComida.Adicional);
-        comidaManager.addItem("papas",comida);
+        ComidaManager.addItem("papas",comida);
         comida = new Comida("ensalada", 500, "ens", TipoComida.Adicional);
-        comidaManager.addItem("ensalada",comida);
+        ComidaManager.addItem("ensalada",comida);
         comida = new Comida("pure", 500, "pur", TipoComida.Adicional);
-        comidaManager.addItem("pure",comida);
+        ComidaManager.addItem("pure",comida);
         comida = new Comida("tres leches", 500, "tres", TipoComida.Adicional);
-        comidaManager.addItem("tres leches",comida);
+        ComidaManager.addItem("tres leches",comida);
         comida = new Comida("hamburguesa", 1500, "burg", TipoComida.Principal);
-        comidaManager.addItem("hamburguesa",comida);
+        ComidaManager.addItem("hamburguesa",comida);
         comida = new Comida("pollo", 1500, "poll", TipoComida.Principal);
-        comidaManager.addItem("pollo",comida);
+        ComidaManager.addItem("pollo",comida);
         comida = new Comida("hot dog", 1500, "hdog", TipoComida.Principal);
-        comidaManager.addItem("hot dog",comida);
+        ComidaManager.addItem("hot dog",comida);
         comida = new Comida("pizza", 1500, "piz", TipoComida.Principal);
-        comidaManager.addItem("pizza",comida);
+        ComidaManager.addItem("pizza",comida);
         comida = new Comida("gaseosa", 500, "gas", TipoComida.Bebida);
-        comidaManager.addItem("gaseosa",comida);
+        ComidaManager.addItem("gaseosa",comida);
 
-        Combo combo = new Combo.Builder().setPlatoFuerte("hamburguesa").addBebidas("gaseosa").addAdicionales("papas").build();
-        comboManager.addItem("Combo 1", combo);
+        Combo combo = new Combo.Builder().setPlatoFuerte("hamburguesa").addAdicionales("papas").addBebidas("gaseosa").build();
+        ComboManager.addItem("Combo 1", combo);
         combo = new Combo.Builder().setPlatoFuerte("pollo").addBebidas("gaseosa").addAdicionales("papas").build();
-        comboManager.addItem("Combo 2", combo);
+        ComboManager.addItem("Combo 2", combo);
         combo = new Combo.Builder().setPlatoFuerte("hot dog").addBebidas("gaseosa").addAdicionales("pure").build();
-        comboManager.addItem("Combo 3", combo);
+        ComboManager.addItem("Combo 3", combo);
         combo = new Combo.Builder().setPlatoFuerte("pizza").addBebidas("gaseosa").build();
-        comboManager.addItem("Combo 4", combo);
+        ComboManager.addItem("Combo 4", combo);
         combo = new Combo.Builder().setPlatoFuerte("pizza").addBebidas("gaseosa").addAdicionales("ensalada").addAdicionales("tres leches").build();
-        comboManager.addItem("Combo 5", combo);
+        ComboManager.addItem("Combo 5", combo);
 
+        ComboManager.getAllKeys();
 
     }
 }
