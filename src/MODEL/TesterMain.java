@@ -38,6 +38,7 @@ public class TesterMain {
         ComboManager.addItem("Combo 5", combo);
 
         ComboManager.getAllKeys();
+        ComidaManager.getTypeKeys(TipoComida.Adicional);
 
     }
 }
