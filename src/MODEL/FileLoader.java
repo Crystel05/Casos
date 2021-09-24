@@ -7,7 +7,7 @@ public class FileLoader {
     public FileLoader() {
     }
 
-    public HashMap<String, IPrototype>loadCombos(String ruta){
+    public void loadComida(String ruta){
         HashMap<String, IPrototype> combos = new HashMap<String,IPrototype>();
 
         return combos;

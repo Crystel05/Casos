@@ -47,10 +47,14 @@ public class Comida implements IPrototype {
     }
 
     public IPrototype clone(){
-        return this;
+        Comida comida = new Comida(
+                this.nombre,
+                this.precio,
+                this.codigo,
+                this.tipoComida
+        );
+        return comida;
     }
 
-    public IPrototype deepClone(){
-        return this;
-    }
+    public IPrototype deepClone(){ return clone(); }
 }

@@ -5,28 +5,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-public class FactoryCombo implements IFactory<IPrototype> {
+public class ComboManager {
 
     public HashMap<String, IPrototype> combos;
 
-    @Override
     public IPrototype getItem(String nombreCombo){
-        return combos.get(nombreCombo);
+        return combos.get(nombreCombo).clone();
     }
 
-    @Override
-    public void addItem(){
-
+    public void addItem(String nombre, IPrototype combo){
+        combos.put(nombre, combo);
     }
 
-    @Override
     public ArrayList<IPrototype>getAll(){
         ArrayList<IPrototype> listaCombos = new ArrayList<IPrototype>();
 
         Set<String> llaves = combos.keySet();
 
         for(String llave : llaves) {
-            listaCombos.add(combos.get(llave));
+            listaCombos.add(combos.get(llave).clone());
         }
         return listaCombos;
     }

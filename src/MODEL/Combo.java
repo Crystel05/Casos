@@ -1,5 +1,7 @@
 package MODEL;
 
+import sun.security.mscapi.CPublicKey;
+
 import java.util.ArrayList;
 
 public class Combo implements IPrototype {
@@ -41,12 +43,27 @@ public class Combo implements IPrototype {
     //implementar
     @Override
     public Combo clone(){
-        return this;
+        Combo combo =  new Combo(
+                this.platoFuerte,
+                this.adicionales,
+                this.bebidas
+        );
+        return combo;
     }
 
     @Override
     public Combo deepClone(){
-        return this;
+        ArrayList<IPrototype> adicionalesCopy = new ArrayList<IPrototype>();
+        ArrayList<IPrototype> bebidasCopy = new ArrayList<IPrototype>();
+        for(IPrototype comida : this.adicionales){
+            adicionalesCopy.add(comida.clone());
+        }
+        for(IPrototype bebida : this.bebidas){
+            bebidasCopy.add(bebida.clone());
+        }
+        Combo combo = new Combo(this.platoFuerte.clone(),adicionalesCopy,bebidasCopy);
+
+        return combo;
     }
 
     public static class Builder implements IBuilder<Combo>{
@@ -55,17 +72,17 @@ public class Combo implements IPrototype {
         private ArrayList<IPrototype> bebidas;
 
         public Builder setPlatoFuerte(String nombre){
-            this.platoFuerte = FactoryComida.getInstance().getItem(nombre).clone();
+            this.platoFuerte = ComidaManager.getItem(nombre).clone();
             return this;
         }
 
         public Builder addAdicionales(String nombre){
-            this.adicionales.add( this.platoFuerte = FactoryComida.getInstance().getItem(nombre).clone() );
+            this.adicionales.add( this.platoFuerte = ComidaManager.getItem(nombre));
             return this;
         }
 
         public Builder addBebidas(String nombre){
-            this.bebidas.add( this.platoFuerte = FactoryComida.getInstance().getItem(nombre).clone() );
+            this.bebidas.add( this.platoFuerte = ComidaManager.getItem(nombre));
             return this;
         }
 
