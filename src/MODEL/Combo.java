@@ -6,14 +6,24 @@ import java.util.ArrayList;
 
 public class Combo implements IPrototype {
 
+        private String nombre;
         private IPrototype platoFuerte;
         private ArrayList<IPrototype> adicionales;
         private ArrayList<IPrototype> bebidas;
 
-    public Combo(IPrototype platoFuerte, ArrayList<IPrototype> adicionales, ArrayList<IPrototype> bebidas) {
+    public Combo(String nombre, IPrototype platoFuerte, ArrayList<IPrototype> adicionales, ArrayList<IPrototype> bebidas) {
+        this.nombre = nombre;
         this.platoFuerte = platoFuerte;
         this.adicionales = adicionales;
         this.bebidas = bebidas;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public IPrototype getPlatoFuerte() {
@@ -44,6 +54,7 @@ public class Combo implements IPrototype {
     @Override
     public Combo clone(){
         Combo combo =  new Combo(
+                this.nombre,
                 this.platoFuerte,
                 this.adicionales,
                 this.bebidas
@@ -61,15 +72,21 @@ public class Combo implements IPrototype {
         for(IPrototype bebida : this.bebidas){
             bebidasCopy.add(bebida.clone());
         }
-        Combo combo = new Combo(this.platoFuerte.clone(),adicionalesCopy,bebidasCopy);
+        Combo combo = new Combo(this.nombre, this.platoFuerte.clone(),adicionalesCopy,bebidasCopy);
 
         return combo;
     }
 
     public static class Builder implements IBuilder<Combo>{
+        private String nombre;
         private IPrototype platoFuerte;
         private ArrayList<IPrototype> adicionales;
         private ArrayList<IPrototype> bebidas;
+
+        public IBuilder setNombre(String nombre){
+            this.nombre = nombre;
+            return this;
+        }
 
         public Builder setPlatoFuerte(String nombre){
             this.platoFuerte = ComidaManager.getItem(nombre).clone();
@@ -88,7 +105,7 @@ public class Combo implements IPrototype {
 
         @Override
         public Combo build(){
-            return new Combo(platoFuerte,adicionales,bebidas);
+            return new Combo(nombre,platoFuerte,adicionales,bebidas);
         }
     }
 }

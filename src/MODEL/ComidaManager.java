@@ -6,6 +6,8 @@ import java.util.Set;
 
 public class ComidaManager {
 
+    public ComidaManager(){}
+
 
     public static HashMap<String, IPrototype> comidas;
 

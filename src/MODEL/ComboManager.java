@@ -7,6 +7,8 @@ import java.util.Set;
 
 public class ComboManager {
 
+    public ComboManager(){}
+
     public HashMap<String, IPrototype> combos;
 
     public IPrototype getItem(String nombreCombo){
@@ -26,6 +28,17 @@ public class ComboManager {
             listaCombos.add(combos.get(llave).clone());
         }
         return listaCombos;
+    }
+
+    public ArrayList<String>getAllKeys(){
+        ArrayList<String> keys = new ArrayList<String>();
+
+        Set<String> llaves = combos.keySet();
+
+        for(String llave : llaves) {
+            keys.add(llave);
+        }
+        return keys;
     }
 
 }
