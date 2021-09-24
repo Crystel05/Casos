@@ -26,19 +26,21 @@ public class TesterMain {
         comida = new Comida("gaseosa", 500, "gas", TipoComida.Bebida);
         ComidaManager.addItem("gaseosa",comida);
 
-        Combo combo = new Combo.Builder().setPlatoFuerte("hamburguesa").addAdicionales("papas").addBebidas("gaseosa").build();
+        Combo combo = new Combo.Builder().setNombre("Combo 1").setPlatoFuerte("hamburguesa").addAdicionales("papas").addBebidas("gaseosa").build();
         ComboManager.addItem("Combo 1", combo);
-        combo = new Combo.Builder().setPlatoFuerte("pollo").addBebidas("gaseosa").addAdicionales("papas").build();
+        combo = new Combo.Builder().setNombre("Combo 2").setPlatoFuerte("pollo").addBebidas("gaseosa").addAdicionales("papas").build();
         ComboManager.addItem("Combo 2", combo);
-        combo = new Combo.Builder().setPlatoFuerte("hot dog").addBebidas("gaseosa").addAdicionales("pure").build();
+        combo = new Combo.Builder().setNombre("Combo 3").setPlatoFuerte("hot dog").addBebidas("gaseosa").addAdicionales("pure").build();
         ComboManager.addItem("Combo 3", combo);
-        combo = new Combo.Builder().setPlatoFuerte("pizza").addBebidas("gaseosa").build();
+        combo = new Combo.Builder().setNombre("Combo 4").setPlatoFuerte("pizza").addBebidas("gaseosa").build();
         ComboManager.addItem("Combo 4", combo);
-        combo = new Combo.Builder().setPlatoFuerte("pizza").addBebidas("gaseosa").addAdicionales("ensalada").addAdicionales("tres leches").build();
+        combo = new Combo.Builder().setNombre("Combo 5").setPlatoFuerte("pizza").addBebidas("gaseosa").addAdicionales("ensalada").addAdicionales("tres leches").build();
         ComboManager.addItem("Combo 5", combo);
 
         ComboManager.getAllKeys();
         ComidaManager.getTypeKeys(TipoComida.Adicional);
+        Combo com =((Combo) ComboManager.getItem("Combo 1"));
+        System.out.println(com.getNombre());
 
     }
 }

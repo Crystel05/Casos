@@ -38,6 +38,22 @@ public class Combo implements IPrototype {
         return adicionales;
     }
 
+    public String getFormatedAdicionales() {
+        String add = "";
+        for(IPrototype comida : adicionales){
+            add += ((Comida) comida).getNombre() + "*";
+        }
+        return add;
+    }
+
+    public String getFormatedBebida() {
+        String add = "";
+        for(IPrototype comida : bebidas){
+            add += ((Comida) comida).getNombre() + "*";
+        }
+        return add;
+    }
+
     public void setAdicionales(ArrayList<IPrototype> adicionales) {
         this.adicionales = adicionales;
     }
@@ -94,7 +110,7 @@ public class Combo implements IPrototype {
         private ArrayList<IPrototype> adicionales = new ArrayList<>();
         private ArrayList<IPrototype> bebidas = new ArrayList<>();
 
-        public IBuilder setNombre(String nombre){
+        public Builder setNombre(String nombre){
             this.nombre = nombre;
             return this;
         }
