@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.Controller">
    <children>
-      <Pane fx:id="contEsferas" layoutX="15.0" layoutY="71.0" prefHeight="735.0" prefWidth="841.0" style="-fx-border-color: CORNFLOWERBLUE;" />
+      <Pane fx:id="contEsferas" layoutX="15.0" layoutY="71.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="735.0" prefWidth="841.0" style="-fx-border-color: CORNFLOWERBLUE;" />
       <Text layoutX="448.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lanzar esferas-Patrones de diseño">
          <font>
             <Font name="Elephant" size="24.0" />
@@ -19,7 +19,7 @@
             <Font name="Comic Sans MS" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="929.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantida de esferas" wrappingWidth="184.63916015625">
+      <Text layoutX="929.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad de esferas" wrappingWidth="184.63916015625">
          <font>
             <Font name="OCR A Extended" size="16.0" />
          </font>
@@ -39,47 +39,51 @@
             <Font name="OCR A Extended" size="16.0" />
          </font>
       </Text>
-      <Text layoutX="932.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+      <Text layoutX="927.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
          <font>
             <Font name="OCR A Extended" size="16.0" />
          </font>
       </Text>
       <Button fx:id="iniciarCreacion" layoutX="964.0" layoutY="428.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="31.0" prefWidth="115.0" text="Iniciar" />
-      <Button fx:id="iniciarNuevaCreacion" layoutX="1118.0" layoutY="428.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="115.0" text="Iniciar nuevo" />
+      <Button fx:id="iniciarNuevaCreacion" layoutX="1118.0" layoutY="428.0" mnemonicParsing="false" onAction="#reIniciar" prefHeight="31.0" prefWidth="115.0" text="Iniciar nuevo" />
       <Text layoutX="1003.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo transurrido">
          <font>
             <Font name="Consolas Bold" size="20.0" />
          </font>
       </Text>
-      <Text id="patron1" fx:id="patron1" layoutX="1020.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+      <Text id="patron1" fx:id="patron1" layoutX="991.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón" visible="false" wrappingWidth="86.9765625">
          <font>
             <Font name="OCR A Extended" size="16.0" />
          </font>
       </Text>
-      <Text id="patron2" fx:id="patron2" layoutX="1020.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón" wrappingWidth="57.984375">
+      <Text id="patron2" fx:id="patron2" layoutX="991.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón" visible="false" wrappingWidth="86.9765625">
          <font>
             <Font name="OCR A Extended" size="16.0" />
          </font>
       </Text>
-      <Text id="patron4" fx:id="patron4" layoutX="1020.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+      <Text id="patron4" fx:id="patron4" layoutX="991.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón" visible="false" wrappingWidth="86.9765625">
          <font>
             <Font name="OCR A Extended" size="16.0" />
          </font>
       </Text>
-      <Text id="patron3" fx:id="patron3" layoutX="1020.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón">
+      <Text id="patron3" fx:id="patron3" layoutX="991.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patrón" visible="false" wrappingWidth="86.9765625">
          <font>
             <Font name="OCR A Extended" size="16.0" />
          </font>
       </Text>
       <TextField fx:id="cantEsferas" layoutX="1158.0" layoutY="144.0" prefHeight="31.0" prefWidth="94.0" />
       <ComboBox fx:id="colorEsferas" layoutX="1110.0" layoutY="206.0" prefHeight="31.0" prefWidth="142.0" promptText="Colores" />
-      <ComboBox fx:id="velocidadEsferas" layoutX="1110.0" layoutY="311.0" prefHeight="31.0" prefWidth="142.0" promptText="Velocidades" />
       <ComboBox fx:id="patronEsferas" layoutX="1110.0" layoutY="360.0" prefHeight="31.0" prefWidth="142.0" promptText="Patrones" />
       <ComboBox fx:id="direccionEsferas" layoutX="1110.0" layoutY="257.0" prefHeight="31.0" prefWidth="142.0" promptText="Direcciones" />
-      <Text id="tiempoPatron1" fx:id="tiempoPatron1" layoutX="1156.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text id="tiempoPatron1" fx:id="tiempoPatron2" layoutX="1156.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text id="tiempoPatron1" fx:id="tiempoPatron3" layoutX="1156.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text id="tiempoPatron1" fx:id="tiempoPatron4" layoutX="1156.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron1" layoutX="1156.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron2" layoutX="1156.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron3" layoutX="1156.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text id="tiempoPatron1" fx:id="tiempoPatron4" layoutX="1156.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
       <Line endX="100.0" layoutX="1147.0" layoutY="428.0" rotate="90.0" startX="-600.0" stroke="#1492ab" strokeWidth="3.0" />
+      <Slider fx:id="velocidadS" blockIncrement="1.0" layoutX="1111.0" layoutY="304.0" max="10.0" showTickLabels="true" showTickMarks="true" />
+      <Text id="tiempoPatron1" fx:id="ms4" layoutX="1201.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ms" visible="false" />
+      <Text id="tiempoPatron1" fx:id="ms3" layoutX="1201.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ms" visible="false" />
+      <Text id="tiempoPatron1" fx:id="ms2" layoutX="1201.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ms" visible="false" />
+      <Text id="tiempoPatron1" fx:id="ms1" layoutX="1201.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ms" visible="false" />
    </children>
 </Pane>

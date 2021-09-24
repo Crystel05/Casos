@@ -5,6 +5,9 @@ import Controlador.GestorBolitas;
 import Modelo.Bolita;
 import Modelo.Colores;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class mainPruebas {
 
     public static void main(String[] args){
@@ -42,5 +45,12 @@ public class mainPruebas {
             System.out.println(bolita3.getDireccion());
             System.out.print("\n");
         }
+
+        for (int i = 0; i<1000000; i++){
+            int velocidad = (int) (Math.random()*10+1);
+            System.out.println(velocidad);
+        }
+
+
     }
 }
