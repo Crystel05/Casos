@@ -28,8 +28,9 @@ import java.util.*;
 
 public class Controller implements Initializable{
     private ArrayList<Circle> esferas = new ArrayList<>();
-
+    private FactoryPatrones factoryPatrones = new FactoryPatrones();
     private List<Integer> direciones = Arrays.asList(0, 45, 90, 135, 180, 225, 270, 315);
+    private ArrayList<Bolita> poolBolitas = new ArrayList<>();
 
     @FXML
     private ComboBox<Integer> direccionEsferas;
@@ -86,7 +87,8 @@ public class Controller implements Initializable{
     private TextField cantEsferas;
 
     @FXML
-    private void iniciar(ActionEvent event){
+
+    private void iniciar(ActionEvent event) {
         int cant = Integer.parseInt(cantEsferas.getText());
         if(!cantEsferas.getText().isEmpty() && !colorEsferas.getSelectionModel().isEmpty() && !patronEsferas.getSelectionModel().isEmpty()) {
             crearEsferas(cant);
@@ -115,6 +117,12 @@ public class Controller implements Initializable{
             contEsferas.getChildren().remove(esfera);
         }
         esferas.clear();
+
+        for (Bolita bolita : poolBolitas) {
+            factoryPatrones.getPool().releaceObject(bolita);
+        }
+        
+        poolBolitas.clear();
     }
 
     private void rebotar(Circle circle, int velocidad, int direccion){
@@ -179,7 +187,7 @@ public class Controller implements Initializable{
         }else{
             random = true;
         }
-        FactoryPatrones factoryPatrones = new FactoryPatrones();
+
         ArrayList<Bolita> bolitas = bolitas(factoryPatrones, patron, Integer.parseInt(cantEsferas.getText()), color, direccion, velocidad, random);
         crearEsferasAux(cant, bolitas);
     }
@@ -195,6 +203,9 @@ public class Controller implements Initializable{
             }
             Bolita bolita = factoryPatrones.crear(patron, color, direccion, velocidad);
             bolitas.add(bolita);
+            if (patron.equals(Patrones.OBJECT_POOL)){
+                poolBolitas.add(bolita);
+            }
         }
         long endTime = System.nanoTime();
         long duration = (endTime - startTime)/1000000;
@@ -241,6 +252,8 @@ public class Controller implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        factoryPatrones.inicializar();
 
         ObservableList<Colores> colores = FXCollections.observableArrayList();
         Collections.addAll(colores, Colores.values());

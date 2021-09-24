@@ -45,7 +45,7 @@
          </font>
       </Text>
       <Button fx:id="iniciarCreacion" layoutX="964.0" layoutY="428.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="31.0" prefWidth="115.0" text="Iniciar" />
-      <Button fx:id="iniciarNuevaCreacion" layoutX="1118.0" layoutY="428.0" mnemonicParsing="false" onAction="#reIniciar" prefHeight="31.0" prefWidth="115.0" text="Iniciar nuevo" />
+      <Button fx:id="iniciarNuevaCreacion" layoutX="1118.0" layoutY="428.0" mnemonicParsing="false" onAction="#reIniciar" prefHeight="31.0" prefWidth="115.0" text="Limpiar datos" />
       <Text layoutX="1003.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo transurrido">
          <font>
             <Font name="Consolas Bold" size="20.0" />

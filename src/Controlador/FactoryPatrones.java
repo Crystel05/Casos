@@ -5,6 +5,12 @@ import Modelo.*;
 import java.awt.*;
 
 public class FactoryPatrones {
+    private ObjectPool pool;
+    private GestorBolitas gestorBolitas;
+
+    public ObjectPool getPool() {
+        return pool;
+    }
 
     public Bolita crear(Patrones patron, Colores color, int direccion, int velocidad){
         Bolita bolitaEscogida = null;
@@ -13,7 +19,8 @@ public class FactoryPatrones {
                 bolitaEscogida = factory(color, direccion, velocidad);
                 break;
             case OBJECT_POOL:
-                return new Bolita(Colores.BLUE);
+                bolitaEscogida = pool(color, direccion, velocidad);
+                break;
             case PROTOTYPE:
                 bolitaEscogida = prototype(color, direccion, velocidad);
                 break;
@@ -25,7 +32,6 @@ public class FactoryPatrones {
     }
 
     private Bolita prototype(Colores color, int direccion, int velocidad) {
-        GestorBolitas gestorBolitas = new GestorBolitas();
         Bolita bolitaPrototype = (Bolita) gestorBolitas.getClon(color).clone();
         bolitaPrototype.setDireccion(direccion);
         bolitaPrototype.setVelocidad(velocidad);
@@ -41,7 +47,6 @@ public class FactoryPatrones {
     }
 
     private Bolita pool(Colores color, int direccion, int velocidad){
-        ObjectPool pool = new ObjectPool(500,1000,1000*100);
         try {
             Bolita bolita = pool.getObject();
             bolita.setColor(color);
@@ -53,6 +58,11 @@ public class FactoryPatrones {
             e.printStackTrace();
             return new Bolita();
         }
+    }
+
+    public void inicializar(){
+        pool = new ObjectPool(500,1000,1000*100);
+        gestorBolitas = new GestorBolitas();
     }
 
 }
