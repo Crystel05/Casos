@@ -1,8 +1,6 @@
 package Controlador;
 
-import Modelo.Bolita;
-import Modelo.Colores;
-import Modelo.Patrones;
+import Modelo.*;
 
 import java.awt.*;
 
@@ -40,6 +38,21 @@ public class FactoryPatrones {
         bolita.setVelocidad(velocidad);
         bolita.setDireccion(direccion);
         return bolita;
+    }
+
+    private Bolita pool(Colores color, int direccion, int velocidad){
+        ObjectPool pool = new ObjectPool(500,1000,1000*100);
+        try {
+            Bolita bolita = pool.getObject();
+            bolita.setColor(color);
+            bolita.setDireccion(direccion);
+            bolita.setVelocidad(velocidad);
+            return bolita;
+        }catch(PoolException e){
+            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
+            return new Bolita();
+        }
     }
 
 }

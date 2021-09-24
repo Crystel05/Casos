@@ -16,6 +16,8 @@ public class Bolita implements IPrototype<Bolita> {
         this.color = color;
     }
 
+    public Bolita(){}
+
     public Colores getColor() {
         return color;
     }
