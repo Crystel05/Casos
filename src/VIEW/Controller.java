@@ -30,7 +30,7 @@ public class Controller implements Initializable {
     private ComboBox<String> bebidas;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources){
         
     }
 }
