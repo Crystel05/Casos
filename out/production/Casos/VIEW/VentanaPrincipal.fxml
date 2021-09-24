@@ -7,8 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VIEW.Controller">
    <children>
       <Text layoutX="624.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Factura">
          <font>
@@ -35,7 +34,7 @@
             <Font name="Kristen ITC" size="15.0" />
          </font>
       </Text>
-      <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="127.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="127.0" layoutY="514.0" onMouseClicked="#agregarCombos" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagenes/mas.png" />
          </image>
@@ -64,27 +63,27 @@
             <Font name="Footlight MT Light" size="25.0" />
          </font>
       </Text>
-      <ImageView fitHeight="95.0" fitWidth="89.0" layoutX="241.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="95.0" fitWidth="89.0" layoutX="263.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true" rotate="18.4">
          <image>
             <Image url="@Imagenes/hambuerguesa.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="73.0" fitWidth="40.0" layoutX="266.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="73.0" fitWidth="40.0" layoutX="287.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" rotate="-11.3">
          <image>
             <Image url="@Imagenes/coca.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="129.0" layoutX="242.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="72.0" fitWidth="129.0" layoutX="242.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true" rotate="-11.3">
          <image>
             <Image url="@Imagenes/papas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="249.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="249.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" rotate="18.4">
          <image>
             <Image url="@Imagenes/combo.png" />
          </image>
       </ImageView>
-      <Text fx:id="totalFac" layoutX="603.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="totalFa" layoutX="603.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
          <font>
             <Font name="Kristen ITC" size="15.0" />
          </font>
