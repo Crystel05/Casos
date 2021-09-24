@@ -25,7 +25,7 @@ public class FactoryPatrones {
                 bolitaEscogida = prototype(color, direccion, velocidad);
                 break;
             case BUILDER:
-                bolitaEscogida = new Bolita.BolitaBuilder().setColor(Colores.BLUE).setDireccion(direccion).setVelocidad(velocidad).build();
+                bolitaEscogida = new Bolita.BolitaBuilder().setColor(color).setDireccion(direccion).setVelocidad(velocidad).build();
                 break;
         }
         return bolitaEscogida;

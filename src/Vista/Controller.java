@@ -89,8 +89,8 @@ public class Controller implements Initializable{
     @FXML
 
     private void iniciar(ActionEvent event) {
-        int cant = Integer.parseInt(cantEsferas.getText());
         if(!cantEsferas.getText().isEmpty() && !colorEsferas.getSelectionModel().isEmpty() && !patronEsferas.getSelectionModel().isEmpty()) {
+            int cant = Integer.parseInt(cantEsferas.getText());
             crearEsferas(cant);
         }
     }
@@ -177,6 +177,7 @@ public class Controller implements Initializable{
     private void crearEsferas(int cant){
         Patrones patron = patronEsferas.getSelectionModel().getSelectedItem();
         Colores color = colorEsferas.getSelectionModel().getSelectedItem();
+
         int direccion = 0;
         int velocidad = 0;
         boolean random;

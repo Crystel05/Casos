@@ -10,6 +10,7 @@ import java.util.List;
 public class BolitaFactory  {
 
     public Bolita crear(Colores color) {
+        System.out.println(color);
         List<Integer> direcciones = Arrays.asList(0, 45, 90, 135, 180, 225, 270, 315);
         int dir = (int) (Math.random()*8);
         int direccion = direcciones.get(dir);

@@ -14,13 +14,13 @@ public class GestorBolitas {
        IPrototype<Bolita> roja = new Bolita(Colores.RED);
        this.addBolitas(Colores.RED, roja);
 
-        IPrototype<Bolita> verde = new Bolita(Colores.RED);
+        IPrototype<Bolita> verde = new Bolita(Colores.GREEN);
         this.addBolitas(Colores.GREEN, verde);
 
-        IPrototype<Bolita> amarilla = new Bolita(Colores.RED);
+        IPrototype<Bolita> amarilla = new Bolita(Colores.YELLOW);
         this.addBolitas(Colores.YELLOW, amarilla);
 
-        IPrototype<Bolita> azul = new Bolita(Colores.RED);
+        IPrototype<Bolita> azul = new Bolita(Colores.BLUE);
         this.addBolitas(Colores.BLUE, azul);
     }
 

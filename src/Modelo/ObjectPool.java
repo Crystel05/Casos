@@ -14,12 +14,10 @@ public class ObjectPool {
     private final Stack<PooledObjectStatus> freeStack = new Stack<>();
 
     public ObjectPool(int minInstances, int maxInstances, int waitTime) {
-        System.out.println("=========== STARTING ============");
         this.minInstances = minInstances;
         this.maxInstances = maxInstances;
         this.waitTime = waitTime;
         initPool();
-        System.out.println("=========== FINISH ============");
     }
 
     private void initPool() {
@@ -46,7 +44,6 @@ public class ObjectPool {
             if (!freeStack.isEmpty()) {
                 PooledObjectStatus first = this.freeStack.pop();
                 first.used = true;
-                System.out.println("Provisioning1 Object > "    + first.uuid.toString());
                 useStack.push(first);
                 return first.pooledObject;
             }
@@ -54,7 +51,6 @@ public class ObjectPool {
                 if (fullStack.size() < maxInstances) {
                     PooledObjectStatus returnObject = createNewPooledObject();
                     returnObject.used = true;
-                    System.out.println("Provisioning2 Object > "    + returnObject.uuid.toString());
                     useStack.push(returnObject);
                     return returnObject.pooledObject;
                 }
@@ -84,7 +80,6 @@ public class ObjectPool {
                     returnObject = freeStack.pop();
                     returnObject.used = true;
                     useStack.push(returnObject);
-                    System.out.println("Provisioning3 Object > "    + returnObject.uuid.toString());
                     return returnObject.pooledObject;
                 }
             }
@@ -109,7 +104,6 @@ public class ObjectPool {
         Bolita newObject = new Bolita(); //Cracion de Bolita basica
         PooledObjectStatus pooled = new PooledObjectStatus(newObject);
         fullStack.push(pooled);
-        System.out.println("New PoolableObject{UUID=" + pooled.uuid.toString() + ", poolSize=" + fullStack.size() + "}");
         return pooled;
     }
 
@@ -120,12 +114,9 @@ public class ObjectPool {
                     freeStack.push(item);
                     useStack.remove(item);
                     item.used = false;
-                    System.out.println("Object returned > "
-                            + item.uuid.toString());
                     return;
                 }
                 else {
-                    System.out.println("Object Invalidate ==> "+ item.uuid.toString());
                     fullStack.remove(item);
                     useStack.remove(item);
                 }
