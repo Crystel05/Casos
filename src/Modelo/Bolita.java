@@ -11,7 +11,7 @@ public class Bolita implements IPrototype<Bolita> {
         this.direccion = direccion;
         this.velocidad = velocidad;
     }
-    
+
     public Bolita(Colores color) {
         this.color = color;
     }
@@ -24,7 +24,7 @@ public class Bolita implements IPrototype<Bolita> {
         this.color = color;
     }
 
-    public float getDireccion() {
+    public int getDireccion() {
         return direccion;
     }
 

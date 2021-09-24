@@ -2,36 +2,38 @@ package Controlador;
 
 import Modelo.Bolita;
 import Modelo.Colores;
+import Modelo.IPrototype;
+
+import java.util.Hashtable;
 
 public class GestorBolitas {
 
-    Bolita roja = new Bolita(Colores.RED);
-    Bolita azul = new Bolita(Colores.BLUE);
-    Bolita amarilla = new Bolita(Colores.YELLOW);
-    Bolita verde = new Bolita(Colores.GREEN);
+    private Hashtable<Colores, IPrototype> esferas = new Hashtable<>();
 
-//    private Hashtable<String, IPrototype<Bolita>> hashBolitas = new Hashtable<>();
-//    // ------------------------------
-//    public GestorBolitas()
-//    {
-//
-//    }
-//    // ------------------------------
-//    public void addEnemigo( String nombre, PrototypeEnemigo objEnemigo )
-//    {
-//        this.hashEnemigos.put( nombre, objEnemigo );
-//    }
-//    // ------------------------------
-//    public PrototypeEnemigo getEnemigo( String nombre )
-//    {
-//        PrototypeEnemigo objPrototipo = (PrototypeEnemigo) hashEnemigos.get( nombre );
-//        return objPrototipo;
-//    }
-//    // ------------------------------
-//    public PrototypeEnemigo getClon( String nombre )
-//    {
-//        // Localizar el objeto deseado
-//        // Devolver un clon
-//        return getEnemigo(nombre).clonar();
-//    }
+    public GestorBolitas(){
+       IPrototype<Bolita> roja = new Bolita(Colores.RED);
+       this.addBolitas(Colores.RED, roja);
+
+        IPrototype<Bolita> verde = new Bolita(Colores.RED);
+        this.addBolitas(Colores.GREEN, verde);
+
+        IPrototype<Bolita> amarilla = new Bolita(Colores.RED);
+        this.addBolitas(Colores.YELLOW, amarilla);
+
+        IPrototype<Bolita> azul = new Bolita(Colores.RED);
+        this.addBolitas(Colores.BLUE, azul);
+    }
+
+    public void addBolitas(Colores color, IPrototype esfera ){
+        this.esferas.put(color, esfera);
+    }
+
+    public IPrototype getBolita(Colores color){
+        IPrototype objPrototipo = (IPrototype) esferas.get(color);
+        return objPrototipo;
+    }
+
+    public IPrototype getClon(Colores color) {
+        return (IPrototype) getBolita(color).clone();
+    }
 }
