@@ -50,6 +50,17 @@ public class Combo implements IPrototype {
         this.bebidas = bebidas;
     }
 
+    public float getPrice(){
+        float acumulado = ((Comida)this.platoFuerte).getPrecio() ;
+        for(IPrototype adicional : this.adicionales){
+            acumulado+=((Comida)adicional).getPrecio();
+        }
+        for(IPrototype bebida : this.bebidas){
+            acumulado+=((Comida)bebida).getPrecio();
+        }
+        return acumulado;
+    }
+
     //implementar
     @Override
     public Combo clone(){

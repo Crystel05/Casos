@@ -46,6 +46,7 @@ public class Comida implements IPrototype {
         this.tipoComida = tipoComida;
     }
 
+
     public IPrototype clone(){
         Comida comida = new Comida(
                 this.nombre,
