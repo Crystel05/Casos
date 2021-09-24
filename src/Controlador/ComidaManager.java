@@ -1,4 +1,8 @@
-package MODEL;
+package Controlador;
+
+import MODEL.Comida;
+import MODEL.IPrototype;
+import MODEL.TipoComida;
 
 import java.util.ArrayList;
 import java.util.HashMap;

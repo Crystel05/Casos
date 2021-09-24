@@ -1,5 +1,7 @@
 package VIEW;
 
+import Controlador.ComboManager;
+import Controlador.ComidaManager;
 import Controlador.Inicializador;
 import MODEL.*;
 import javafx.collections.FXCollections;

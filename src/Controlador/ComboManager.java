@@ -1,5 +1,7 @@
-package MODEL;
+package Controlador;
 
+
+import MODEL.IPrototype;
 
 import java.util.ArrayList;
 import java.util.HashMap;
