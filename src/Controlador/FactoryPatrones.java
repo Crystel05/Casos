@@ -40,7 +40,7 @@ public class FactoryPatrones {
 
     private Bolita factory(Colores color, int direccion, int velocidad){
         BolitaFactory bolitaFactory = new BolitaFactory();
-        Bolita bolita = bolitaFactory.crear(color);
+        Bolita bolita = bolitaFactory.crear(color, direccion, velocidad);
         bolita.setVelocidad(velocidad);
         bolita.setDireccion(direccion);
         return bolita;

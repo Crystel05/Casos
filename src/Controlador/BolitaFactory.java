@@ -9,12 +9,7 @@ import java.util.List;
 
 public class BolitaFactory  {
 
-    public Bolita crear(Colores color) {
-        System.out.println(color);
-        List<Integer> direcciones = Arrays.asList(0, 45, 90, 135, 180, 225, 270, 315);
-        int dir = (int) (Math.random()*8);
-        int direccion = direcciones.get(dir);
-        int velocidad = (int) (Math.random()*10);
+    public Bolita crear(Colores color, int direccion, int velocidad) {
         Bolita bolita = null;
         switch (color){
             case RED: bolita = new Bolita(Colores.RED, direccion, velocidad); break;
